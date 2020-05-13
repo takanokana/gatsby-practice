@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
@@ -8,8 +7,8 @@ import styled from "styled-components"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <Title>宇宙の日記</Title>
+    <SEO />
+    <Title>色々な紙飛行機</Title>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
