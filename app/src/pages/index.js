@@ -1,23 +1,32 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
+// import Image from "../components/image"
 import SEO from "../components/seo"
 import styled from "styled-components"
+import kvImg from "../images/kv.jpg"
 
 const IndexPage = () => (
   <Layout>
-    <SEO />
-    <Title>色々な紙飛行機</Title>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Top"/>
+    <IndexWrapper>
+      <Title>色々な紙飛行機</Title>
+      <div className="imgBox">
+        <img src={kvImg} alt="紙飛行機の画像" />
+      </div>
+      <Link to="/page-2/">Go to page 2</Link>
+    </IndexWrapper>
   </Layout>
 )
 
 export default IndexPage
 
+const IndexWrapper = styled.div`
+  text-align: center;
+  & .imgBox {
+    width: 100%;
+  }
+`
 const Title = styled.h1`
   color: blue;
 `
