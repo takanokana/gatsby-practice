@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import Layout from "../components/layout"
-// import Image from "../components/image"
+import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
-const IndexPage = () => (
+const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Top"/>
     <IndexWrapper>
@@ -13,7 +13,14 @@ const IndexPage = () => (
       <div className="imgBox">
         <img src='/kv.jpg' alt="紙飛行機の画像" />
       </div>
-      <Link to="/page-2/">Go to page 2</Link>
+      <p>記事一覧 {data.allMarkdownRemark.totalCount}件</p>
+      {data.allMarkdownRemark.edges.map(({node}) => (
+        <div key={node.id}>
+          <Link to={node.fields.slug}>{node.frontmatter.title} - {node.frontmatter.date}</Link>
+        </div>
+      ))}
+
+      {/* <Link to="/page-2/">Go to page 2</Link> */}
     </IndexWrapper>
   </Layout>
 )
@@ -28,4 +35,24 @@ const IndexWrapper = styled.div`
 `
 const Title = styled.h1`
   color: blue;
+`
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order:DESC}) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "YYYY年MM月DD日")
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
 `
