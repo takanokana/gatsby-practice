@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import kvImg from "../images/kv.jpg"
 
 const IndexPage = () => (
   <Layout>
@@ -12,7 +11,7 @@ const IndexPage = () => (
     <IndexWrapper>
       <Title>色々な紙飛行機</Title>
       <div className="imgBox">
-        <img src={kvImg} alt="紙飛行機の画像" />
+        <img src='/kv.jpg' alt="紙飛行機の画像" />
       </div>
       <Link to="/page-2/">Go to page 2</Link>
     </IndexWrapper>
