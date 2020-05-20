@@ -45,3 +45,19 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+
+//   const typeDefs = `
+//     type Frontmatter @infer {
+//       featuredImage: File
+//     }
+
+//     type MarkdownRemark implements Node @infer {
+//       frontmatter: Frontmatter
+//     }
+//   `
+//   createTypes(typeDefs)
+// }

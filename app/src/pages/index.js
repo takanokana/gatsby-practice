@@ -1,5 +1,4 @@
 import React from "react"
-// import { Link } from "gatsby"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
@@ -47,6 +46,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "YYYY年MM月DD日")
+            imgPass
           }
           fields {
             slug

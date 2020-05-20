@@ -11,9 +11,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/`,
+        name: `page`,
+        path: `${__dirname}/src/pages`,
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-plugin-styled-components`,
     {
