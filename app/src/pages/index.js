@@ -18,7 +18,10 @@ const IndexPage = ({data}) => (
           <Link to={node.fields.slug}>{node.frontmatter.title} - {node.frontmatter.date}</Link>
         </div>
       ))}
-
+      <Link
+        to="/app/login"
+        className="loginBtn"
+      >ログインページへ</Link>
       {/* <Link to="/page-2/">Go to page 2</Link> */}
     </IndexWrapper>
   </Layout>
@@ -30,6 +33,16 @@ const IndexWrapper = styled.div`
   text-align: center;
   & .imgBox {
     width: 100%;
+  }
+  & .loginBtn {
+    display: block;
+    width: 200px;
+    margin: 5px auto 0;
+    border: 1px solid #ccc;
+    background: grey;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
   }
 `
 const Title = styled.h1`
